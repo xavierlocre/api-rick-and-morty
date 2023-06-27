@@ -1,0 +1,222 @@
+*{
+    font-size: 20px;
+    font-family: 'Londrina Shadow', cursive;
+    color: #000;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.imagenfondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.imagenfondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.header{
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+/*selecciona la imagen dentro del elemento con la clase*/
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+/*selecciona la imagen para darle un efecto hover cuando pases por encima de la imagen*/
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+/*elimina los marcadores de lista*/
+.header .nav-links{
+    list-style: none;
+}
+
+/*seleccina los elementos li estableciendo la visualización en línea y agrega un relleno horizontal*/
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;    
+}
+
+/*selecciona los elementos li dentro de la nav-link, así como los enlaces dentro de overlay cuando se realiza el hover*/
+.header .nav-links li:hover,
+/**/.overlay a:hover{
+    transform: scale(1.1);
+}
+
+/*selecciona la etiqueta "a" dentro de los elementos li estableciendo un tamaño de 700*/
+.header .nav-links a{
+    font-size: 700;
+    color: black; 
+}
+
+/*selecciona la etiqueta "a" para darle el color amarillo cuando pases por encima dando el movimiento hover*/
+.header .nav-links a:hover{
+    color: #ffbc0e;
+}
+
+/*oculta la visibilidad del contenido menu*/
+/**/.menu {
+    display:none;
+}
+
+/*selecciona los botones que ya estan dentro del menu y se le dan estilos y margen*/
+.header .btn button,
+/**/.header .menu button{
+    margin-left: 20px;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+/*selecciona los botones que estan dentro del menu dandole un hover y cambiandose el color al amarillo*/
+.header .btn button:hover,
+/**/.header .menu button:hover{
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+/*establece una regla de estilo para la pantalla apartir de 800, ocultandose la nav de desktop y mostrando el menu para tablet o movil*/
+/**/@media screen and (max-width: 800px){
+    .nav-links, .btn {
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+}
+
+
+
+/*Nav Mobile*/
+
+.header a{
+    text-decoration: none;  
+    /*borramos el que teniamos en .header .nav-links a*/ 
+}
+
+.header .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(33, 49, 63, .95);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 700;
+    color: #eceff1;
+}
+
+.header .overlay a:hover, 
+.header .overlay a:focus{
+    color: #ffbc0e;
+}
+
+.header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+
+@media screen and (max-height:450px) {
+    .header .overlay a{
+        font-size: 20px;
+    }
+    .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.span{
+    text-align: center;
+}
+
+/*establece el contendor main con cuadriculas*/
+/*esta propiedad establece como el numero y el tamaño de las columnas de la cuadricula en este caso se definio en tres columnas con el valor
+1fr para cada una lo que significa que cada columna ocupara una fraccion igual del estacio disponible*/
+/*esta propiedas establece el espacio entre las filas y las columnas de la cuadricula*/
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+article {
+    padding: 10px;
+    box-shadow: 5px 5px 5px #000;
+    border: 1px solid;
+    margin: 30px;
+}
+
+button{
+    border-radius: 10px;
+}
